@@ -1,0 +1,19 @@
+{% if question_list %}
+ 	{% for question in question_list %}	
+	<tr>
+	     <td>{{ forloop.counter }}</td>
+	     <td>
+	           <a href={% url 'pybo:detail'  question.id %}">{{ question.subject }}</a>
+                  </td>
+	     <td>{{ question.create_date }}</td>
+	</tr>
+	{% endfor %}
+	{% else %}
+	<tr>
+	     <td colspan="3">질문이 없습니다.</td>
+	</tr>
+	{% endif %}
+	</tbody>
+    </table>
+</div>
+{% endblock %}
